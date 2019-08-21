@@ -1,0 +1,16 @@
+{
+  "name": "xxx",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"No tests yet...\""
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "azure-func-multipart-parser": "^0.1.2",
+    "form-data": "^2.5.0",
+    "multiparty": "^4.2.1",
+    "parse-multipart": "^1.0.4"
+  },
+  "devDependencies": {}
+}
