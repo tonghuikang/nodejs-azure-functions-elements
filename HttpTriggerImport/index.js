@@ -1,4 +1,4 @@
-var localImports = require("../modules/local-imports.js")
+var localImports = require("../modules/basic/basicFunctions")
 
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
