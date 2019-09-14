@@ -12,6 +12,8 @@ What is technically special in the solution is (which I tried quite hard to find
 - that is deployable on Google Cloud Functions as well
 therefore if you are going to deploy nodeJS on Azure Functions monika is a good template
 
+Serverless functions works in a very restricted environment. Do not assume that your usual Node.js methods will work on Azure Functions, so please test thoroughly.
+
 ## Functions offered
 
 #### HttpTriggerHello
