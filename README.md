@@ -1,6 +1,8 @@
 # m-serverless
 
-Why did it make this?
+Why did I make this?
+
+Because Azure is not developed for developers, but engineered for corporate compliance. Converting an Node.js backend app to work on Azure Functions is not easy, and I need to hunt for tutorials. Notably, the standard packages do not parse multipart/form-data on Azure Functions.
 
 What is technically special in the solution is (which I tried quite hard to find a solution for)
 - it is somewhat like a NodeJS Express app
