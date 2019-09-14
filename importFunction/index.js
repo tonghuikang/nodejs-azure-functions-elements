@@ -1,4 +1,4 @@
-var localImports = require("../modules/basic/basicFunctions")
+var basicFunctions = require("../modules/basic/basicFunctions")
 
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
@@ -6,7 +6,7 @@ module.exports = async function (context, req) {
     if (req.query.name || (req.body && req.body.name)) {
         context.res = {
             // status: 200, /* Defaults to 200 */
-            body: localImports.sayHelloInEnglish() + (req.query.name || req.body.name)
+            body: basicFunctions.sayHelloInEnglish() + (req.query.name || req.body.name)
         };
     }
     else {

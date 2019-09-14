@@ -1,5 +1,5 @@
 var parser = require("azure-func-multipart-parser");
-var localImports = require("../modules/local-imports.js")
+var basicFunctions = require("../modules/basicFunctions.js")
 const FormData = require("form-data");
 
 module.exports = async function (context, req) {
@@ -26,7 +26,7 @@ module.exports = async function (context, req) {
         );
     }
 
-    let result = await localImports.postFormData(formData, "https://enve4l0vhcsxf.x.pipedream.net/")
+    let result = await basicFunctions.postFormData(formData, "https://enve4l0vhcsxf.x.pipedream.net/")
 
     context.res = {
         // status: 200, /* Defaults to 200 */

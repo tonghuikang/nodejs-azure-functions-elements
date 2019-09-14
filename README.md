@@ -2,7 +2,7 @@
 
 Why did I make this?
 
-Because Azure is not developed for developers, but engineered for corporate compliance. Converting an Node.js backend app to work on Azure Functions is not easy, and I need to hunt for tutorials. Notably, the standard packages do not parse multipart/form-data on Azure Functions.
+Because Azure is not developed for developers, but engineered for corporate compliance. Converting an Node.js backend app to work on Azure Functions is not easy, and I need to hunt for tutorials and packages. Notably, the standard packages do not parse multipart/form-data on Azure Functions, and I needed to find an obscure package.
 
 What is technically special in the solution is (which I tried quite hard to find a solution for)
 - it is somewhat like a NodeJS Express app
@@ -13,6 +13,10 @@ What is technically special in the solution is (which I tried quite hard to find
 therefore if you are going to deploy nodeJS on Azure Functions monika is a good template
 
 Serverless functions works in a very restricted environment. Do not assume that your usual Node.js methods will work on Azure Functions, so please test thoroughly.
+
+#### Prerequisites
+
+Basic knowledge of Javascript, especially on how to use `async await`.
 
 ## Functions offered
 

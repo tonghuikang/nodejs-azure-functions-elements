@@ -1,17 +1,14 @@
 const createHandler = require('azure-function-express').createHandler;
 const app = require('express')()
-var localImports = require("../modules/local-imports.js")
+var middlewareModules = require("../modules/middleware/middlewareModules")
 
-/////////////////////////////////////////////
-// Import SDK inside modules folder
-/////////////////////////////////////////////
 
 // handles replacing placeholder @blah@
 app.post('/api/basicMiddleware',
     (req, res, next) => {console.log('/api/basicMiddleware is called...'); next()},
-    localImports.echo,
+    middlewareModules.echo,
     (req, res) => res.send(req.body)
 ) // done
 
 // Binds the express app to an Azure Function handler
-module.exports = createHandler(app)
+module.exports = createHasndler(app)
