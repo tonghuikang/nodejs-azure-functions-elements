@@ -4,8 +4,8 @@ var middlewareModules = require("../modules/middleware/middlewareModules")
 
 
 // handles replacing placeholder @blah@
-app.post('/api/basicMiddleware',
-    (req, res, next) => {console.log('/api/basicMiddleware is called...'); next()},
+app.post('/api/importMiddleware',
+    (req, res, next) => {console.log('/api/importMiddleware is called...'); next()},
     middlewareModules.echo,
     (req, res) => res.send(req.body)
 ) // done

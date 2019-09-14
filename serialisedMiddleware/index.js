@@ -6,8 +6,8 @@ const index = require('../index')
 // Import SDK inside modules folder
 /////////////////////////////////////////////
 
-app.post('/api/exportedMiddleware',
-    index.exportedMiddleware,
+app.post('/api/serialisedMiddleware',
+    index.serialisedMiddleware,
 )
 
 // Binds the express app to an Azure Function handler

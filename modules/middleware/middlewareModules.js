@@ -1,4 +1,4 @@
 exports.echo = async function(req, res, next) {
-    console.log(req.body);
+    req.body["codestamp"] = "edited in middleware"
     next()
 }
