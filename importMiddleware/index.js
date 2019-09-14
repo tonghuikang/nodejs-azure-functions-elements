@@ -1,6 +1,6 @@
 const createHandler = require('azure-function-express').createHandler;
 const app = require('express')()
-var middlewareModules = require("../modules/middleware/middlewareModules")
+const middlewareModules = require("../modules/middleware/middlewareModules")
 
 
 // handles replacing placeholder @blah@

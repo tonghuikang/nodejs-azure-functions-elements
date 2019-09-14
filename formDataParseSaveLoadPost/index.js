@@ -1,8 +1,8 @@
-var parser = require("azure-func-multipart-parser");
-var basicFunctions = require("../modules/basic/basicFunctions.js")
+const parser = require("azure-func-multipart-parser");
+const basicFunctions = require("../modules/basic/basicFunctions.js")
 const FormData = require("form-data");
 const fs = require('fs')
-var path = require('path');
+const path = require('path');
 const { promisify } = require('util')
 const readFileAsync = promisify(fs.readFile)
 const writeFileAsync = promisify(fs.writeFile)
@@ -19,7 +19,7 @@ const writeFileAsync = promisify(fs.writeFile)
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
 
-    var { files, fields } = parser.parse(req);
+    let { files, fields } = parser.parse(req);
 
     for (let name in files) {
         let fpath = path.join("/tmp/", files[name].filename);
@@ -33,12 +33,12 @@ module.exports = async function (context, req) {
     let formData = new FormData();
 
     context.log(fields);
-    for (var key in fields) {
+    for (let key in fields) {
         formData.append(key, fields[key]);
     }
 
     console.log(files);
-    for (var name in files) {
+    for (let name in files) {
         let file_data = await readFileAsync(files[name]["path"]);
         let file_buffer = await Buffer.from(file_data);
         formData.append(

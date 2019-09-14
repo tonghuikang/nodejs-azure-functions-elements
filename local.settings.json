@@ -1,7 +1,7 @@
 {
   "IsEncrypted": false,
   "Values": {
-    "ENV_VARIABLE_NAME": "ENV_VARIABLE_VALUE",
+    "ENV_VARIABLE_EXAMPLE_NAME": "env_variable_example_value",
     "FUNCTIONS_WORKER_RUNTIME": "node"
   }
 }

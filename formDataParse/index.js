@@ -1,10 +1,10 @@
-var parser = require("azure-func-multipart-parser");
+const parser = require("azure-func-multipart-parser");
 
 
 module.exports = function (context, request) {
     context.log('JavaScript HTTP trigger function processed a request.');
-    var parts = parser.parse(request);
-    context.log(parts);
+
+    let parts = parser.parse(request);
     context.res = { body: parts };
     context.done();
 };
