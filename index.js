@@ -7,7 +7,7 @@ exports.serialisedMiddleware = series(
     console.log("===== START ENDPOINT /api/serialisedMiddleware =====");
     next();
   },
-  middlewareModules.echo,
+  middlewareModules.codestamp,
   (req, res, next) => {
     console.log("===== END ENDPOINT /api/serialisedMiddleware =====");
     next();

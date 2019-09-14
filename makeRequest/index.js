@@ -3,15 +3,13 @@ const basicFunctions = require("../modules/basic/basicFunctions");
 module.exports = async function(context, req) {
   context.log("JavaScript HTTP trigger function processed a request.");
 
-  content = {
-    params: req.query,
-    body: req.body
-  };
+  let query = req.query
+  let body = req.body
 
-  let result = await basicFunctions.postJSON(content);
+  let result = await basicFunctions.postJSON(body);
 
   context.res = {
     // status: 200, /* Defaults to 200 */
-    body: content
+    body: {query, body, result}
   };
 };

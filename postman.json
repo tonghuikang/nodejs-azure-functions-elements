@@ -1,0 +1,443 @@
+{
+	"info": {
+		"_postman_id": "3e6f3a89-654b-4e7c-b244-ddef9931a5cc",
+		"name": "nodejs-azure-functions-elements-test",
+		"description": "This tests https://github.com/tonghuikang/nodejs-azure-functions-elements",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "HttpTriggerHello",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8000d49f-dce2-4288-95f4-47547ef49ef8",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{endpointDomain}}/HttpTriggerHello?name=Lee",
+					"host": [
+						"{{endpointDomain}}"
+					],
+					"path": [
+						"HttpTriggerHello"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Lee"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "importFunction",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0690341c-ece4-448f-b890-1fd34f4fed36",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{endpointDomain}}/importFunction?name=Lee",
+					"host": [
+						"{{endpointDomain}}"
+					],
+					"path": [
+						"importFunction"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Lee"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "makeRequest",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "30d10d23-8b8a-4ba8-abc4-94b0bf7c6da9",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"message\" : \"CSS is awesome\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpointDomain}}/makeRequest?hello-params-key=hello-params-value",
+					"host": [
+						"{{endpointDomain}}"
+					],
+					"path": [
+						"makeRequest"
+					],
+					"query": [
+						{
+							"key": "hello-params-key",
+							"value": "hello-params-value"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "accessEnv",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "18572f40-bfde-4e5f-8ca3-9c86ba9026fd",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{endpointDomain}}/accessEnv",
+					"host": [
+						"{{endpointDomain}}"
+					],
+					"path": [
+						"accessEnv"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "formDataParse",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a775d159-5963-4958-a710-3d90e0dfe963",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "hello-field-key",
+							"value": "hello-field-value",
+							"type": "text"
+						},
+						{
+							"key": "hello-file",
+							"type": "file",
+							"src": "/Users/hkmac/Desktop/pix.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{endpointDomain}}/formDataParse",
+					"host": [
+						"{{endpointDomain}}"
+					],
+					"path": [
+						"formDataParse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "formDataParsePost",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e5f9d469-0de1-4ef0-98e0-a76d803d745f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "hello-field-key",
+							"value": "hello-field-value",
+							"type": "text"
+						},
+						{
+							"key": "hello-file",
+							"type": "file",
+							"src": "/Users/hkmac/Desktop/pix.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{endpointDomain}}/formDataParsePost",
+					"host": [
+						"{{endpointDomain}}"
+					],
+					"path": [
+						"formDataParsePost"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "formDataParseSaveLoadPost",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ef2cbcbb-6fbf-4b13-b15b-8c088b44ecfe",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "hello-field-key",
+							"value": "hello-field-value",
+							"type": "text"
+						},
+						{
+							"key": "hello-file",
+							"type": "file",
+							"src": "/Users/hkmac/Desktop/pix.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{endpointDomain}}/formDataParseSaveLoadPost",
+					"host": [
+						"{{endpointDomain}}"
+					],
+					"path": [
+						"formDataParseSaveLoadPost"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "importMiddleware",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "28f0e619-2df6-4c5c-a91e-18b7f3fe03ba",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"note\" : \"witness the body getting edited\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpointDomain}}/importMiddleware?name=Lee",
+					"host": [
+						"{{endpointDomain}}"
+					],
+					"path": [
+						"importMiddleware"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Lee"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "serialisedMiddleware",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "00ddd1f8-493c-44a7-bb3a-e2caea44976e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"note\" : \"witness the body getting edited\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpointDomain}}/serialisedMiddleware",
+					"host": [
+						"{{endpointDomain}}"
+					],
+					"path": [
+						"serialisedMiddleware"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "2712c74c-bcab-4a33-8b0b-18670ecafdca",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "24638b88-887b-4446-be7e-9f29d7b1ee67",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "80ed1c13-f608-4d97-9849-7d5dc24ba1ef",
+			"key": "endpointDomain",
+			"value": "https://actions-serverless.azurewebsites.net/api",
+			"type": "string"
+		},
+		{
+			"id": "eacd391b-dad9-4c10-86c2-b76967d41056",
+			"key": "localServer",
+			"value": "http://localhost:7071/api",
+			"type": "string"
+		},
+		{
+			"id": "f2e2da39-92cc-43af-9be6-e9b0910afd66",
+			"key": "deployedServer",
+			"value": "https://actions-serverless.azurewebsites.net/api",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

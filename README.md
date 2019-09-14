@@ -43,6 +43,9 @@ Parses multipart/form-data and relays to somewhere else.
 #### HttpTriggerRelay || formDataParseSaveLoadPost
 Parses multipart/form-data and relays to somewhere else.
 
+Regarding the use of the filesystem in Azure functions
+https://stackoverflow.com/questions/39218895/azure-functions-nodejs-what-are-restrictions-limitations-when-using-file-sys
+
 #### basicMiddleware || importMiddleware
 Use of middleware on Azure functions.
 Featuring package `azure-function-express`

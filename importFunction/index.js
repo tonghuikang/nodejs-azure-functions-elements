@@ -7,7 +7,7 @@ module.exports = async function(context, req) {
     context.res = {
       // status: 200, /* Defaults to 200 */
       body:
-        basicFunctions.sayHelloInSpanish() + (req.query.name || req.body.name)
+        basicFunctions.sayHelloInSpanish(req.query.name || req.body.name)
     };
   } else {
     context.res = {
