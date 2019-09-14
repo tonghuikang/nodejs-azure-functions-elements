@@ -33,11 +33,14 @@ Calling code from another file. We want different endpoint to share certain func
 Call a function which make a POST request.
 Featuring package `axios`
 
-#### HttpTriggerFormData || parseFormData
+#### HttpTriggerFormData || formDataParse
 Parse multipart/form-data into its fields and files. The content type of the files is a buffer.
 Featuring package `azure-func-multipart-parser`
 
-#### HttpTriggerRelay || relayFormData
+#### HttpTriggerRelay || formDataParsePost
+Parses multipart/form-data and relays to somewhere else.
+
+#### HttpTriggerRelay || formDataParseSaveLoadPost
 Parses multipart/form-data and relays to somewhere else.
 
 #### basicMiddleware || importMiddleware

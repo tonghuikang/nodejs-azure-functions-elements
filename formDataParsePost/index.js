@@ -1,5 +1,5 @@
 var parser = require("azure-func-multipart-parser");
-var basicFunctions = require("../modules/basicFunctions.js")
+var basicFunctions = require("../modules/basic/basicFunctions.js")
 const FormData = require("form-data");
 
 module.exports = async function (context, req) {

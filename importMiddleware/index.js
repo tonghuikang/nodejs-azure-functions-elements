@@ -11,4 +11,5 @@ app.post('/api/basicMiddleware',
 ) // done
 
 // Binds the express app to an Azure Function handler
-module.exports = createHasndler(app)
+module.exports = createHandler(app)
+

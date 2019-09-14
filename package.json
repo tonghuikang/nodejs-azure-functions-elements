@@ -10,7 +10,8 @@
     "azure-func-multipart-parser": "^0.1.2",
     "azure-function-express": "^2.0.0",
     "express": "^4.17.1",
-    "form-data": "^2.5.0"
+    "form-data": "^2.5.0",
+    "middleware-flow": "^0.8.0"
   },
   "devDependencies": {}
 }

@@ -1,7 +1,7 @@
 axios = require("axios")
 
-exports.sayHelloInEnglish = function() {
-    return "HELLO ";
+exports.sayHelloInSpanish = function() {
+    return "Hola ";
 };
 
 exports.postJSON = async function(obj) {

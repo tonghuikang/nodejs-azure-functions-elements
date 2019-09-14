@@ -6,7 +6,7 @@ module.exports = async function (context, req) {
     if (req.query.name || (req.body && req.body.name)) {
         context.res = {
             // status: 200, /* Defaults to 200 */
-            body: basicFunctions.sayHelloInEnglish() + (req.query.name || req.body.name)
+            body: basicFunctions.sayHelloInSpanish() + (req.query.name || req.body.name)
         };
     }
     else {

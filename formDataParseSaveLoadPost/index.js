@@ -1,7 +1,8 @@
 var parser = require("azure-func-multipart-parser");
-var basicFunctions = require("../modules/basicFunctions.js")
+var basicFunctions = require("../modules/basic/basicFunctions.js")
 const FormData = require("form-data");
 const fs = require('fs')
+var path = require('path');
 const { promisify } = require('util')
 const readFileAsync = promisify(fs.readFile)
 const writeFileAsync = promisify(fs.writeFile)
@@ -18,17 +19,15 @@ const writeFileAsync = promisify(fs.writeFile)
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
 
-    var {files, fields} = parser.parse(req);
+    var { files, fields } = parser.parse(req);
 
-    let fileObj = {};
-
-    for (let count in files){
-      let file = files[count];
-      let fpath = path.join("/tmp/", file.name);
-      fileObj[`fileName${count}`] = file.name;
-      fileObj[`filePath${count}`] = fpath;
-      files[count]["path"] = fpath;
-      await writeFileAsync(fpath, Buffer.from(files[count]["content"]));
+    for (let name in files) {
+        let fpath = path.join("/tmp/", files[name].filename);
+        files[name]["path"] = fpath;
+        await writeFileAsync(fpath, Buffer.from(files[name]["content"]));
+        files[name].content = ""
+        // content is saved in directory rather than as a variable
+        // some of your functions may need to read the directory
     }
 
     let formData = new FormData();
@@ -39,14 +38,15 @@ module.exports = async function (context, req) {
     }
 
     console.log(files);
-    for (var key in files) {
-        let file_data = readFileAsync(files[key]["path"])
+    for (var name in files) {
+        let file_data = await readFileAsync(files[name]["path"]);
+        let file_buffer = await Buffer.from(file_data);
         formData.append(
-            key, 
-            Buffer.from(file_data),
+            name,
+            file_buffer,
             {
-                filename: files[key]["filename"],
-                contentType: files[key]["type"],
+                filename: files[name].filename,
+                contentType: files[name].type,
             }
         );
     }
@@ -55,6 +55,6 @@ module.exports = async function (context, req) {
 
     context.res = {
         // status: 200, /* Defaults to 200 */
-        body: fields
+        body: {fields, files}
     };
 };
