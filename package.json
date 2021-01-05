@@ -6,7 +6,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "azure-func-multipart-parser": "^0.1.2",
     "azure-function-express": "^2.0.0",
     "express": "^4.17.1",
